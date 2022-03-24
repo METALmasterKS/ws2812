@@ -24,6 +24,7 @@
 #define LED_DT 2
 
 int bright = 128;
+const init_bright = 64;
 
 GButton but1(4);
 GButton but2(6);
@@ -219,7 +220,7 @@ void setup() {
   but1.setTickMode(true);
   but2.setTickMode(true);
 
-  LEDS.setBrightness(bright);
+  LEDS.setBrightness(init_bright);
   LEDS.addLeds<WS2811, LED_DT, GRB>(leds, LED_COUNT);
   one_color_all(0, 255, 0);
   LEDS.show();
